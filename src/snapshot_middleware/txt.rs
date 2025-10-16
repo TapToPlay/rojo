@@ -5,7 +5,7 @@ use rbx_dom_weak::ustr;
 
 use crate::snapshot::{InstanceContext, InstanceMetadata, InstanceSnapshot};
 
-use super::meta_file::AdjacentMetadata;
+use super::{meta_file::AdjacentMetadata, util::sanitize_instance_name};
 
 pub fn snapshot_txt(
     context: &InstanceContext,
@@ -19,7 +19,7 @@ pub fn snapshot_txt(
     let meta_path = path.with_file_name(format!("{}.meta.json", name));
 
     let mut snapshot = InstanceSnapshot::new()
-        .name(name)
+        .name(sanitize_instance_name(name))
         .class_name("StringValue")
         .property(ustr("Value"), contents_str)
         .metadata(

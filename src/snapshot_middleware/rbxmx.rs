@@ -5,6 +5,8 @@ use memofs::Vfs;
 
 use crate::snapshot::{InstanceContext, InstanceMetadata, InstanceSnapshot};
 
+use super::util::sanitize_instance_name;
+
 pub fn snapshot_rbxmx(
     context: &InstanceContext,
     vfs: &Vfs,
@@ -23,7 +25,7 @@ pub fn snapshot_rbxmx(
     if children.len() == 1 {
         let child = children[0];
         let snapshot = InstanceSnapshot::from_tree(temp_tree, child)
-            .name(name)
+            .name(sanitize_instance_name(name))
             .metadata(
                 InstanceMetadata::new()
                     .instigating_source(path)

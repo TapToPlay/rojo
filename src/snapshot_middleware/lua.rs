@@ -8,6 +8,7 @@ use crate::snapshot::{InstanceContext, InstanceMetadata, InstanceSnapshot};
 use super::{
     dir::{dir_meta, snapshot_dir_no_meta},
     meta_file::AdjacentMetadata,
+    util::sanitize_instance_name,
 };
 
 #[derive(Debug)]
@@ -75,8 +76,10 @@ pub fn snapshot_lua(
 
     let meta_path = path.with_file_name(format!("{}.meta.json", name));
 
+    let sanitized_name = sanitize_instance_name(name);
+
     let mut snapshot = InstanceSnapshot::new()
-        .name(name)
+        .name(sanitized_name)
         .class_name(class_name)
         .properties(properties)
         .metadata(
@@ -120,8 +123,16 @@ pub fn snapshot_lua_init(
         );
     }
 
+    // Get the ORIGINAL folder name from the filesystem path for meta file lookup
+    // (not the sanitized name from dir_snapshot)
+    let original_folder_name = folder_path
+        .file_name()
+        .expect("Could not extract file name")
+        .to_str()
+        .ok_or_else(|| anyhow::anyhow!("File name was not valid UTF-8: {}", folder_path.display()))?;
+
     let mut init_snapshot =
-        snapshot_lua(context, vfs, init_path, &dir_snapshot.name, script_type)?.unwrap();
+        snapshot_lua(context, vfs, init_path, original_folder_name, script_type)?.unwrap();
 
     init_snapshot.children = dir_snapshot.children;
     init_snapshot.metadata = dir_snapshot.metadata;

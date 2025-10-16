@@ -4,7 +4,7 @@ use memofs::{DirEntry, IoResultExt, Vfs};
 
 use crate::snapshot::{InstanceContext, InstanceMetadata, InstanceSnapshot};
 
-use super::{meta_file::DirectoryMetadata, snapshot_from_vfs};
+use super::{meta_file::DirectoryMetadata, snapshot_from_vfs, util::sanitize_instance_name};
 
 pub fn snapshot_dir(
     context: &InstanceContext,
@@ -70,8 +70,9 @@ pub fn snapshot_dir_no_meta(
         .file_name()
         .expect("Could not extract file name")
         .to_str()
-        .ok_or_else(|| anyhow::anyhow!("File name was not valid UTF-8: {}", path.display()))?
-        .to_string();
+        .ok_or_else(|| anyhow::anyhow!("File name was not valid UTF-8: {}", path.display()))?;
+
+    let instance_name = sanitize_instance_name(instance_name);
 
     let meta_path = path.join("init.meta.json");
 
