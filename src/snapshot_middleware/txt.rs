@@ -10,7 +10,7 @@ use crate::{
     syncback::{FsSnapshot, SyncbackReturn, SyncbackSnapshot},
 };
 
-use super::{meta_file::AdjacentMetadata, PathExt as _};
+use super::{meta_file::AdjacentMetadata, util::sanitize_instance_name, PathExt as _};
 
 pub fn snapshot_txt(
     context: &InstanceContext,
@@ -22,7 +22,7 @@ pub fn snapshot_txt(
     let contents_str = contents.as_str();
 
     let mut snapshot = InstanceSnapshot::new()
-        .name(name)
+        .name(sanitize_instance_name(name))
         .class_name("StringValue")
         .property(ustr("Value"), contents_str)
         .metadata(

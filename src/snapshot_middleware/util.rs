@@ -49,7 +49,33 @@ where
     }
 }
 
+/// Sanitizes a file/directory name to be a valid Roblox instance name.
+/// Currently replaces '@' with '|' to allow files with @ symbols to sync properly.
+pub fn sanitize_instance_name(name: &str) -> String {
+    name.replace('@', "|")
+}
+
 // TEMP function until rojo 8.0, when it can be replaced with bool::default (aka false)
 pub fn emit_legacy_scripts_default() -> Option<bool> {
     Some(true)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_sanitize_at_symbol() {
+        assert_eq!(sanitize_instance_name("test@script"), "test|script");
+        assert_eq!(sanitize_instance_name("@start"), "|start");
+        assert_eq!(sanitize_instance_name("end@"), "end|");
+        assert_eq!(sanitize_instance_name("multiple@at@symbols"), "multiple|at|symbols");
+    }
+
+    #[test]
+    fn test_sanitize_no_change() {
+        assert_eq!(sanitize_instance_name("normal_script"), "normal_script");
+        assert_eq!(sanitize_instance_name("test|pipe"), "test|pipe");
+        assert_eq!(sanitize_instance_name(""), "");
+    }
 }

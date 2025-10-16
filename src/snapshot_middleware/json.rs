@@ -9,7 +9,7 @@ use crate::{
     snapshot::{InstanceContext, InstanceMetadata, InstanceSnapshot},
 };
 
-use super::meta_file::AdjacentMetadata;
+use super::{meta_file::AdjacentMetadata, util::sanitize_instance_name};
 
 pub fn snapshot_json(
     context: &InstanceContext,
@@ -26,7 +26,7 @@ pub fn snapshot_json(
     let as_lua = json_to_lua(value).to_string();
 
     let mut snapshot = InstanceSnapshot::new()
-        .name(name)
+        .name(sanitize_instance_name(name))
         .class_name("ModuleScript")
         .property(ustr("Source"), as_lua)
         .metadata(

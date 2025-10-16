@@ -11,7 +11,7 @@ use crate::{
     syncback::{hash_instance, FsSnapshot, SyncbackReturn, SyncbackSnapshot},
 };
 
-use super::{meta_file::DirectoryMetadata, snapshot_from_vfs};
+use super::{meta_file::DirectoryMetadata, snapshot_from_vfs, util::sanitize_instance_name};
 
 const EMPTY_DIR_KEEP_NAME: &str = ".gitkeep";
 
@@ -77,7 +77,7 @@ pub fn snapshot_dir_no_meta(
     ];
 
     let snapshot = InstanceSnapshot::new()
-        .name(name)
+        .name(sanitize_instance_name(name))
         .class_name("Folder")
         .children(snapshot_children)
         .metadata(

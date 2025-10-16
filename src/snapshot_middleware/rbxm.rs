@@ -8,6 +8,8 @@ use crate::{
     syncback::{FsSnapshot, SyncbackReturn, SyncbackSnapshot},
 };
 
+use super::util::sanitize_instance_name;
+
 #[profiling::function]
 pub fn snapshot_rbxm(
     context: &InstanceContext,
@@ -24,7 +26,7 @@ pub fn snapshot_rbxm(
     if children.len() == 1 {
         let child = children[0];
         let snapshot = InstanceSnapshot::from_tree(temp_tree, child)
-            .name(name)
+            .name(sanitize_instance_name(name))
             .metadata(
                 InstanceMetadata::new()
                     .instigating_source(path)

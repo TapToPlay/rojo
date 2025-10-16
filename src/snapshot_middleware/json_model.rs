@@ -17,6 +17,8 @@ use crate::{
     RojoRef,
 };
 
+use super::util::sanitize_instance_name;
+
 pub fn snapshot_json_model(
     context: &InstanceContext,
     vfs: &Vfs,
@@ -47,7 +49,7 @@ pub fn snapshot_json_model(
         );
     }
 
-    instance.name = Some(name.to_owned());
+    instance.name = Some(sanitize_instance_name(name));
 
     let id = instance.id.take().map(RojoRef::new);
     let schema = instance.schema.take();

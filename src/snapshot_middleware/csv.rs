@@ -17,6 +17,7 @@ use crate::{
 use super::{
     dir::{snapshot_dir_no_meta, syncback_dir_no_meta},
     meta_file::{AdjacentMetadata, DirectoryMetadata},
+    util::sanitize_instance_name,
     PathExt as _,
 };
 
@@ -36,7 +37,7 @@ pub fn snapshot_csv(
     })?;
 
     let mut snapshot = InstanceSnapshot::new()
-        .name(name)
+        .name(sanitize_instance_name(name))
         .class_name("LocalizationTable")
         .property(ustr("Contents"), table_contents)
         .metadata(
@@ -75,7 +76,15 @@ pub fn snapshot_csv_init(
         );
     }
 
-    let mut init_snapshot = snapshot_csv(context, vfs, init_path, &dir_snapshot.name)?.unwrap();
+    // Get the ORIGINAL folder name from the filesystem path for meta file lookup
+    // (not the sanitized name from dir_snapshot)
+    let original_folder_name = folder_path
+        .file_name()
+        .expect("Could not extract file name")
+        .to_str()
+        .ok_or_else(|| anyhow::anyhow!("File name was not valid UTF-8: {}", folder_path.display()))?;
+
+    let mut init_snapshot = snapshot_csv(context, vfs, init_path, original_folder_name)?.unwrap();
 
     init_snapshot.children = dir_snapshot.children;
     init_snapshot.metadata = dir_snapshot.metadata;

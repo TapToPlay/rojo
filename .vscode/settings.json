@@ -1,4 +1,5 @@
 {
   "luau-lsp.sourcemap.rojoProjectFile": "plugin.project.json",
-  "luau-lsp.sourcemap.autogenerate": true
+  "luau-lsp.sourcemap.autogenerate": true,
+  "rojo.binaryPath": "C:\\Users\\Mitchell\\.cargo\\bin\\rojo.exe"
 }

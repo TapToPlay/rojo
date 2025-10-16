@@ -25,7 +25,7 @@ use crate::{
     RojoRef,
 };
 
-use super::{emit_legacy_scripts_default, snapshot_from_vfs};
+use super::{emit_legacy_scripts_default, snapshot_from_vfs, util::sanitize_instance_name};
 
 pub fn snapshot_project(
     context: &InstanceContext,
@@ -101,7 +101,7 @@ pub fn snapshot_project_node(
 
     let mut class_name_from_path = None;
 
-    let name = Cow::Owned(instance_name.to_owned());
+    let name = Cow::Owned(sanitize_instance_name(instance_name));
     let mut properties = UstrMap::new();
     let mut children = Vec::new();
     let mut metadata = InstanceMetadata::new().context(context);

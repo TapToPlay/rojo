@@ -10,7 +10,7 @@ use crate::{
     snapshot::{InstanceContext, InstanceMetadata, InstanceSnapshot},
 };
 
-use super::meta_file::AdjacentMetadata;
+use super::{meta_file::AdjacentMetadata, util::sanitize_instance_name};
 
 pub fn snapshot_yaml(
     context: &InstanceContext,
@@ -31,7 +31,7 @@ pub fn snapshot_yaml(
     let as_lua = Statement::Return(yaml_to_luau(value)?);
 
     let mut snapshot = InstanceSnapshot::new()
-        .name(name)
+        .name(sanitize_instance_name(name))
         .class_name("ModuleScript")
         .property(ustr("Source"), as_lua.to_string())
         .metadata(
