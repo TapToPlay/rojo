@@ -75,7 +75,7 @@ pub struct InstanceMetadata {
 impl InstanceMetadata {
     pub fn new() -> Self {
         Self {
-            ignore_unknown_instances: false,
+            ignore_unknown_instances: true,
             instigating_source: None,
             relevant_paths: Vec::new(),
             context: InstanceContext::default(),

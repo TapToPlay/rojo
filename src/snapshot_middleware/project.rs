@@ -277,17 +277,9 @@ pub fn snapshot_project_node(
     }
 
     // If the user specified $ignoreUnknownInstances, overwrite the existing
-    // value.
-    //
-    // If the user didn't specify it AND $path was not specified (meaning
-    // there's no existing value we'd be stepping on from a project file or meta
-    // file), set it to true.
+    // value. Otherwise, the default value of true will be used.
     if let Some(ignore) = node.ignore_unknown_instances {
         metadata.ignore_unknown_instances = ignore;
-    } else if node.path.is_none() {
-        // TODO: Introduce a strict mode where $ignoreUnknownInstances is never
-        // set implicitly.
-        metadata.ignore_unknown_instances = true;
     }
 
     if let Some(id) = &node.id {

@@ -11,7 +11,7 @@ instances:
     ClassName: Folder
     Id: id-2
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: scripts
     Parent: "00000000000000000000000000000000"
     Properties: {}
@@ -20,7 +20,7 @@ instances:
     ClassName: Script
     Id: id-3
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: bar
     Parent: id-2
     Properties:
@@ -33,7 +33,7 @@ instances:
     ClassName: ModuleScript
     Id: id-4
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: foo
     Parent: id-2
     Properties:

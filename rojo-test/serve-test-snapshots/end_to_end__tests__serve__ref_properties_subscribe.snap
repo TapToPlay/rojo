@@ -11,7 +11,7 @@ body:
           ClassName: Model
           Id: id-11
           Metadata:
-            ignoreUnknownInstances: false
+            ignoreUnknownInstances: true
           Name: ProjectPointer
           Parent: id-7
           Properties:
@@ -27,7 +27,7 @@ body:
       updated:
         - changedClassName: ~
           changedMetadata:
-            ignoreUnknownInstances: false
+            ignoreUnknownInstances: true
           changedName: ~
           changedProperties:
             Attributes:

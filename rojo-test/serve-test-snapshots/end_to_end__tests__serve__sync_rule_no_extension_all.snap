@@ -10,7 +10,7 @@ instances:
     ClassName: Folder
     Id: id-2
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: sync_rule_no_extension
     Parent: "00000000000000000000000000000000"
     Properties: {}
@@ -19,7 +19,7 @@ instances:
     ClassName: ModuleScript
     Id: id-3
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: no_extension
     Parent: id-2
     Properties:

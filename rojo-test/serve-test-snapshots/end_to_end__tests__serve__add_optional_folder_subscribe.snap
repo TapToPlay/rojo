@@ -12,7 +12,7 @@ messages:
         ClassName: Folder
         Id: id-5
         Metadata:
-          ignoreUnknownInstances: false
+          ignoreUnknownInstances: true
         Name: node_modules
         Parent: id-3
         Properties: {}
@@ -21,7 +21,7 @@ messages:
         ClassName: StringValue
         Id: id-6
         Metadata:
-          ignoreUnknownInstances: false
+          ignoreUnknownInstances: true
         Name: bar
         Parent: id-5
         Properties:

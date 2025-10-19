@@ -21,7 +21,7 @@ instances:
     ClassName: Folder
     Id: id-3
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: src
     Parent: id-2
     Properties: {}
@@ -30,7 +30,7 @@ instances:
     ClassName: StringValue
     Id: id-4
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: foo
     Parent: id-3
     Properties:
@@ -42,7 +42,7 @@ instances:
     ClassName: Folder
     Id: id-5
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: node_modules
     Parent: id-3
     Properties: {}
@@ -51,7 +51,7 @@ instances:
     ClassName: StringValue
     Id: id-6
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: bar
     Parent: id-5
     Properties:

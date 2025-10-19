@@ -11,7 +11,7 @@ body:
           ClassName: Folder
           Id: id-3
           Metadata:
-            ignoreUnknownInstances: false
+            ignoreUnknownInstances: true
           Name: my-new-folder
           Parent: id-2
           Properties: {}

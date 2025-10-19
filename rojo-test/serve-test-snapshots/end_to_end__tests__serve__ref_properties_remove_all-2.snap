@@ -9,7 +9,7 @@ instances:
     ClassName: Folder
     Id: id-2
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: ref_properties_remove
     Parent: "00000000000000000000000000000000"
     Properties: {}
@@ -18,7 +18,7 @@ instances:
     ClassName: ObjectValue
     Id: id-3
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: pointer
     Parent: id-2
     Properties:
