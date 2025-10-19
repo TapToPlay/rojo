@@ -9,7 +9,7 @@ instances:
     ClassName: ModuleScript
     Id: id-2
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: edit_init
     Parent: "00000000000000000000000000000000"
     Properties:

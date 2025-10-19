@@ -42,7 +42,7 @@ instances:
     ClassName: Tool
     Id: id-5
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: Tool
     Parent: id-3
     Properties:

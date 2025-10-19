@@ -10,7 +10,7 @@ messages:
         ClassName: Model
         Id: id-3
         Metadata:
-          ignoreUnknownInstances: false
+          ignoreUnknownInstances: true
         Name: test
         Parent: id-2
         Properties:

@@ -8,7 +8,7 @@ instances:
     ClassName: Folder
     Id: id-2
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: move_folder_of_stuff
     Parent: "00000000000000000000000000000000"
     Properties: {}

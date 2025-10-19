@@ -22,7 +22,7 @@ instances:
     ClassName: Folder
     Id: id-3
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: src
     Parent: id-2
     Properties: {}

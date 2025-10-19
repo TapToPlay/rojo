@@ -64,7 +64,7 @@ instances:
     ClassName: Folder
     Id: id-5
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: FolderTarget
     Parent: id-3
     Properties: {}
@@ -73,7 +73,7 @@ instances:
     ClassName: ObjectValue
     Id: id-6
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: FolderPointer
     Parent: id-5
     Properties:
@@ -89,7 +89,7 @@ instances:
     ClassName: Folder
     Id: id-7
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: ModelTarget
     Parent: id-3
     Properties: {}
@@ -98,7 +98,7 @@ instances:
     ClassName: Model
     Id: id-8
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: ModelPointer
     Parent: id-7
     Properties:

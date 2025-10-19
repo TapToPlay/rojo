@@ -9,7 +9,7 @@ instances:
     ClassName: StringValue
     Id: id-10
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "6"
     Parent: id-3
     Properties:
@@ -20,7 +20,7 @@ instances:
     ClassName: StringValue
     Id: id-11
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "7"
     Parent: id-3
     Properties:
@@ -31,7 +31,7 @@ instances:
     ClassName: StringValue
     Id: id-12
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "8"
     Parent: id-3
     Properties:
@@ -42,7 +42,7 @@ instances:
     ClassName: StringValue
     Id: id-13
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "9"
     Parent: id-3
     Properties:
@@ -54,7 +54,7 @@ instances:
     ClassName: Folder
     Id: id-2
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: move_folder_of_stuff
     Parent: "00000000000000000000000000000000"
     Properties: {}
@@ -73,7 +73,7 @@ instances:
     ClassName: Folder
     Id: id-3
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: new-stuff
     Parent: id-2
     Properties: {}
@@ -82,7 +82,7 @@ instances:
     ClassName: StringValue
     Id: id-4
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "0"
     Parent: id-3
     Properties:
@@ -93,7 +93,7 @@ instances:
     ClassName: StringValue
     Id: id-5
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "1"
     Parent: id-3
     Properties:
@@ -104,7 +104,7 @@ instances:
     ClassName: StringValue
     Id: id-6
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "2"
     Parent: id-3
     Properties:
@@ -115,7 +115,7 @@ instances:
     ClassName: StringValue
     Id: id-7
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "3"
     Parent: id-3
     Properties:
@@ -126,7 +126,7 @@ instances:
     ClassName: StringValue
     Id: id-8
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "4"
     Parent: id-3
     Properties:
@@ -137,7 +137,7 @@ instances:
     ClassName: StringValue
     Id: id-9
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: "5"
     Parent: id-3
     Properties:

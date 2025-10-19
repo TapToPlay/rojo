@@ -10,7 +10,7 @@ instances:
     ClassName: Folder
     Id: id-2
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: sync_rule_alone
     Parent: "00000000000000000000000000000000"
     Properties: {}
@@ -19,7 +19,7 @@ instances:
     ClassName: StringValue
     Id: id-3
     Metadata:
-      ignoreUnknownInstances: false
+      ignoreUnknownInstances: true
     Name: foo
     Parent: id-2
     Properties:
