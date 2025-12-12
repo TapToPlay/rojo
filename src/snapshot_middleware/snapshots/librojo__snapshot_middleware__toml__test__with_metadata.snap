@@ -4,7 +4,7 @@ expression: instance_snapshot
 ---
 snapshot_id: "00000000000000000000000000000000"
 metadata:
-  ignore_unknown_instances: false
+  ignore_unknown_instances: true
   instigating_source:
     Path: foo.toml
   relevant_paths:

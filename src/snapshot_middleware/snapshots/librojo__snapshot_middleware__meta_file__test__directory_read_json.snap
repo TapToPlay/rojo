@@ -4,7 +4,7 @@ expression: snapshot
 ---
 snapshot_id: "00000000000000000000000000000000"
 metadata:
-  ignore_unknown_instances: false
+  ignore_unknown_instances: true
   relevant_paths:
     - /foo/init.meta.json
     - /foo/init.meta.jsonc

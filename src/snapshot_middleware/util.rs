@@ -52,7 +52,7 @@ where
 /// Sanitizes a file/directory name to be a valid Roblox instance name.
 /// Currently replaces '@' with '|' and '_' with ':' to allow files with these symbols to sync properly.
 pub fn sanitize_instance_name(name: &str) -> String {
-    name.replace('@', "|")
+    name.replace('@', "|").replace('_', ":")
 }
 
 // TEMP function until rojo 8.0, when it can be replaced with bool::default (aka false)
